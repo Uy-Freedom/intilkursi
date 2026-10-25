@@ -1,0 +1,690 @@
+<!DOCTYPE html>
+<html lang="ug" dir="rtl" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>«ئىنتىل» كۇرسى - زامانىۋى ئىسلامىي ئۆگىنىش مەركىزى</title>
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400;1,700&family=Noto+Naskh+Arabic:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        emerald: {
+                            850: '#073227',
+                            900: '#04251d',
+                            950: '#021611',
+                        },
+                        gold: {
+                            300: '#f9e29c',
+                            400: '#f3d068',
+                            500: '#d4af37',
+                            600: '#b89228',
+                            700: '#8c6b16',
+                        }
+                    },
+                    fontFamily: {
+                        uyghur: ['UKIJ Tuz Tom', 'ALKATIP Basma', 'Microsoft Uighur', 'Noto Naskh Arabic', 'Amiri', 'sans-serif'],
+                        arabic: ['Amiri', 'serif']
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            font-family: 'UKIJ Tuz Tom', 'ALKATIP Basma', 'Microsoft Uighur', 'Noto Naskh Arabic', 'Amiri', sans-serif;
+            background-color: #021611;
+            color: #e2f1ec;
+        }
+
+        /* Modern Mesh Gradient Overlay with Subtle Islamic Geometry */
+        .mesh-bg {
+            background-color: #021611;
+            background-image: 
+                radial-gradient(at 0% 0%, rgba(212, 175, 55, 0.15) 0px, transparent 50%),
+                radial-gradient(at 100% 0%, rgba(16, 185, 129, 0.2) 0px, transparent 50%),
+                radial-gradient(at 100% 100%, rgba(212, 175, 55, 0.12) 0px, transparent 50%),
+                radial-gradient(at 0% 100%, rgba(4, 37, 29, 0.9) 0px, transparent 50%),
+                radial-gradient(at 50% 50%, rgba(6, 78, 59, 0.25) 0px, transparent 100%);
+        }
+
+        .islamic-svg-pattern {
+            background-image: url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23d4af37' fill-opacity='0.05' fill-rule='evenodd'%3E%3Cpath d='M0 0h40v40H0V0zm40 40h40v40H40V40zm0-40h40v40H40V0zM0 40h40v40H0V40z'/%3E%3Cpath d='M20 0l20 20L20 40 0 20zM60 0l20 20-20 20-20-20zM20 40l20 20-20 20-20-20zM60 40l20 20-20 20-20-20z'/%3E%3C/g%3E%3C/svg%3E");
+        }
+
+        /* Modern Glassmorphism Styling */
+        .glass-card {
+            background: rgba(4, 37, 29, 0.65);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(212, 175, 55, 0.22);
+        }
+
+        .glass-card-interactive {
+            background: rgba(6, 50, 39, 0.6);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .glass-card-interactive:hover {
+            border-color: rgba(243, 208, 104, 0.6);
+            box-shadow: 0 10px 30px -10px rgba(212, 175, 55, 0.3);
+            transform: translateY(-4px);
+        }
+
+        /* Glowing Text & Elements */
+        .gold-glow-text {
+            text-shadow: 0 0 20px rgba(212, 175, 55, 0.4);
+        }
+
+        .gold-glow-box {
+            box-shadow: 0 0 35px rgba(212, 175, 55, 0.2);
+        }
+
+        /* Accordion transition */
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.35s ease, opacity 0.35s ease;
+            opacity: 0;
+        }
+
+        .faq-answer.open {
+            max-height: 250px;
+            opacity: 1;
+        }
+
+        /* Pulse Animation for CTA */
+        @keyframes subtlePulse {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.85; transform: scale(0.98); }
+        }
+        .pulse-subtle {
+            animation: subtlePulse 3s infinite ease-in-out;
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #021611;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #d4af37;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body class="antialiased overflow-x-hidden mesh-bg min-h-screen">
+
+    <!-- Top Announcement Bar -->
+    <div class="bg-gradient-to-r from-gold-700 via-gold-500 to-amber-600 text-emerald-950 font-bold py-2.5 px-4 text-xs sm:text-sm text-center shadow-lg relative z-50 flex items-center justify-center gap-3">
+        <span class="bg-emerald-950 text-gold-300 text-xs px-2.5 py-0.5 rounded-full border border-gold-400">ئېلان</span>
+        <span>📢 2026-يىللىق «ئىنتىل» كۇرسىغا ئوقۇغۇچى قوبۇل قىلىنىش باشلاندى!</span>
+        <a href="#register" class="underline hover:text-white transition-colors mr-2">ھازىرلا تىزىملىتىڭ &larr;</a>
+    </div>
+
+    <!-- Navigation Header -->
+    <header class="sticky top-0 z-40 bg-emerald-950/80 backdrop-blur-xl border-b border-gold-500/20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <!-- Brand Logo -->
+            <a href="#" class="flex items-center gap-3 group">
+                <div class="w-12 h-12 rounded-2xl bg-gradient-to-tr from-gold-600 via-gold-400 to-amber-200 p-0.5 shadow-lg group-hover:shadow-gold-500/40 transition-all">
+                    <div class="w-full h-full bg-emerald-950 rounded-[14px] flex items-center justify-center border border-gold-500/40">
+                        <i class="fa-solid fa-book-quran text-gold-400 text-xl group-hover:scale-110 transition-transform"></i>
+                    </div>
+                </div>
+                <div>
+                    <h1 class="text-2xl font-black tracking-wide text-transparent bg-clip-text bg-gradient-to-r from-gold-300 via-gold-400 to-amber-200">ئىنتىل</h1>
+                    <p class="text-[10px] text-emerald-400 tracking-wider">ئۆگىنىش ۋە يۈكسىلىش مەركىزى</p>
+                </div>
+            </a>
+
+            <!-- Navigation Menu -->
+            <nav class="hidden md:flex items-center space-x-8 space-x-reverse text-sm font-medium text-emerald-100">
+                <a href="#about" class="hover:text-gold-400 transition-colors">كۇرس ئالاھىدىلىكى</a>
+                <a href="#curriculum" class="hover:text-gold-400 transition-colors">مەزمۇنلار</a>
+                <a href="#calculator" class="hover:text-gold-400 transition-colors">باھا ھېسابلىغۇچ</a>
+                <a href="#schedule" class="hover:text-gold-400 transition-colors">ۋاقىت ۋە ئورۇن</a>
+                <a href="#faq" class="hover:text-gold-400 transition-colors">سۆئاللار</a>
+            </nav>
+
+            <!-- Quick Action Header Button -->
+            <div>
+                <a href="#register" class="bg-gradient-to-r from-gold-500 via-gold-400 to-amber-500 hover:from-gold-400 hover:to-gold-600 text-emerald-950 font-extrabold px-6 py-2.5 rounded-xl shadow-lg shadow-gold-500/10 hover:shadow-gold-500/30 transition-all text-sm flex items-center gap-2">
+                    <i class="fa-solid fa-paper-plane"></i>
+                    <span>تىزىملىتىش</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative py-16 sm:py-24 overflow-hidden islamic-svg-pattern">
+        <!-- Ambient Radial Glows -->
+        <div class="absolute top-1/4 right-1/4 w-96 h-96 bg-gold-500/10 rounded-full blur-3xl pointer-events-none"></div>
+        <div class="absolute bottom-10 left-10 w-96 h-96 bg-emerald-500/15 rounded-full blur-3xl pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                
+                <!-- Hero Content Left/Right -->
+                <div class="lg:col-span-7 space-y-6 text-center lg:text-right">
+                    
+                    <!-- Islamic Bismillah Badge -->
+                    <div class="inline-flex items-center gap-2 bg-emerald-900/60 border border-gold-500/40 px-5 py-2 rounded-full text-gold-300 text-xs sm:text-sm font-arabic backdrop-blur-md">
+                        <span class="text-gold-400">✨</span>
+                        <span>بِسْمِ ٱللَّهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ</span>
+                        <span class="text-gold-400">✨</span>
+                    </div>
+
+                    <h2 class="text-3xl sm:text-5xl lg:text-6xl font-black text-white leading-tight">
+                        پەرزەنتىڭىزنىڭ <span class="text-transparent bg-clip-text bg-gradient-to-r from-gold-300 via-gold-400 to-amber-200 gold-glow-text">ئەرەب تىلى</span> ۋە <span class="text-transparent bg-clip-text bg-gradient-to-r from-gold-300 via-gold-400 to-amber-200 gold-glow-text">ماتېماتىكا</span> ئاساسىنى بىرگە كۈچەيتىڭ!
+                    </h2>
+
+                    <p class="text-base sm:text-lg text-emerald-200 leading-relaxed font-light max-w-2xl mx-auto lg:mx-0">
+                        «ئىنتىل» كۇرسىمىزدا ئىسلامىي گۈزەل ئادابلار، راۋان ئەرەب تىلى ھەم مەنتىقىي ماتېماتىكا تەپەككۇرى بىرگە ئۆگىتىلىدۇ. پەرزەنتىڭىزنىڭ كەلگۈسىگە پۇختا ئاساس سېلىڭ!
+                    </p>
+
+                    <!-- Highlights Badge Bar -->
+                    <div class="pt-2 flex flex-wrap justify-center lg:justify-start gap-3 text-xs sm:text-sm">
+                        <div class="glass-card px-4 py-2 rounded-xl flex items-center gap-2 border border-gold-500/30">
+                            <i class="fa-solid fa-child-reaching text-gold-400 text-base"></i>
+                            <span class="text-emerald-100">10 ياشتىن يۇقىرى ئوغۇللارغا خاس</span>
+                        </div>
+                        <div class="glass-card px-4 py-2 rounded-xl flex items-center gap-2 border border-gold-500/30">
+                            <i class="fa-solid fa-chalkboard-user text-gold-400 text-base"></i>
+                            <span class="text-emerald-100">تەجرىبىلىك ئوقۇتقۇچىلار</span>
+                        </div>
+                        <div class="glass-card px-4 py-2 rounded-xl flex items-center gap-2 border border-gold-500/30">
+                            <i class="fa-solid fa-mosque text-gold-400 text-base"></i>
+                            <span class="text-emerald-100">ئىسلامىي ئەخلاق تەربىيەسى</span>
+                        </div>
+                    </div>
+
+                    <!-- CTA Actions -->
+                    <div class="pt-6 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
+                        <a href="#register" class="w-full sm:w-auto bg-gradient-to-r from-gold-500 via-gold-400 to-amber-500 hover:from-gold-400 hover:to-gold-600 text-emerald-950 font-black px-8 py-4 rounded-2xl shadow-xl shadow-gold-500/20 hover:shadow-gold-500/40 transition-all text-lg flex items-center justify-center gap-3">
+                            <i class="fa-solid fa-pen-to-square"></i>
+                            <span>ھازىرلا تىزىملىتىڭ</span>
+                        </a>
+                        <a href="https://t.me/Intilkursi" target="_blank" class="w-full sm:w-auto glass-card hover:bg-emerald-900/80 text-gold-300 font-bold px-8 py-4 rounded-2xl transition-all text-lg flex items-center justify-center gap-3 border border-gold-500/40">
+                            <i class="fa-brands fa-telegram text-2xl text-sky-400"></i>
+                            <span>تېلېگرام: @Intilkursi</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Dynamic Seats Counter & Card Right/Left -->
+                <div class="lg:col-span-5 flex justify-center">
+                    <div class="w-full max-w-md relative">
+                        
+                        <!-- Glowing Backlight -->
+                        <div class="absolute -inset-1 bg-gradient-to-r from-gold-500 via-emerald-400 to-gold-600 rounded-3xl blur-lg opacity-40 animate-pulse"></div>
+
+                        <div class="relative glass-card rounded-3xl p-6 sm:p-8 border border-gold-500/40 shadow-2xl space-y-6">
+                            
+                            <!-- Header Status -->
+                            <div class="flex items-center justify-between border-b border-gold-500/20 pb-4">
+                                <div>
+                                    <span class="text-xs text-gold-400 font-bold uppercase tracking-wider block">قوبۇل قىلىش ئەھۋالى</span>
+                                    <h3 class="text-xl font-bold text-white mt-0.5">ئىنتىل 2026 مۇددەتلىك</h3>
+                                </div>
+                                <span class="bg-emerald-800/80 text-emerald-300 border border-emerald-500/50 text-xs px-3 py-1 rounded-full font-semibold animate-pulse">
+                                    🔴 ئوچۇق
+                                </span>
+                            </div>
+
+                            <!-- Interactive Seats Left Counter Widget -->
+                            <div class="bg-emerald-950/80 p-5 rounded-2xl border border-gold-500/30 text-center space-y-3">
+                                <span class="text-xs text-emerald-300 block font-medium">ھازىر قاشقان ئورۇن سانى:</span>
+                                
+                                <div class="flex items-center justify-center gap-2">
+                                    <span id="seatsCounter" class="text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-gold-300 to-amber-400 gold-glow-text">7</span>
+                                    <span class="text-emerald-300 font-bold text-lg">ئورۇن</span>
+                                </div>
+
+                                <!-- Progress Bar -->
+                                <div class="w-full bg-emerald-900 h-3 rounded-full overflow-hidden border border-emerald-800">
+                                    <div id="seatProgressBar" class="bg-gradient-to-r from-gold-500 to-amber-400 h-full rounded-full transition-all duration-1000" style="width: 65%;"></div>
+                                </div>
+                                <p class="text-[11px] text-emerald-400">جەمئىي 20 ئوقۇغۇچىدىن 13 ئوقۇغۇچى تىزىملىتىپ بولدى.</p>
+                            </div>
+
+                            <!-- Quick Summary List -->
+                            <div class="space-y-3 text-sm text-emerald-100">
+                                <div class="flex items-center justify-between p-3 rounded-xl bg-emerald-900/40 border border-emerald-800/60">
+                                    <span class="text-emerald-300 font-bold"><i class="fa-solid fa-book text-gold-400 ml-2"></i>ئەرەب تىلى:</span>
+                                    <span>العربية بين يديك</span>
+                                </div>
+                                <div class="flex items-center justify-between p-3 rounded-xl bg-emerald-900/40 border border-emerald-800/60">
+                                    <span class="text-emerald-300 font-bold"><i class="fa-solid fa-square-root-variable text-gold-400 ml-2"></i>ماتېماتىكا:</span>
+                                    <span>تەپەككۇر & ھېسابلاش</span>
+                                </div>
+                                <div class="flex items-center justify-between p-3 rounded-xl bg-emerald-900/40 border border-emerald-800/60">
+                                    <span class="text-emerald-300 font-bold"><i class="fa-solid fa-clock text-gold-400 ml-2"></i>ۋاقتى:</span>
+                                    <span>جۈمە (چۈشتىن بۇرۇن) / شەنبە (چۈشتىن كېيىن)</span>
+                                </div>
+                            </div>
+
+                            <!-- Register direct button -->
+                            <a href="#register" class="block w-full text-center bg-gradient-to-r from-gold-500 to-amber-500 hover:from-gold-400 hover:to-gold-600 text-emerald-950 font-black py-3.5 rounded-xl transition-all shadow-lg text-base">
+                                تېز ئورۇن ئېجىرا قىلىش
+                            </a>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Detailed Features / Curriculum Section -->
+    <section id="about" class="py-20 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="text-center max-w-3xl mx-auto mb-16 space-y-3">
+                <span class="bg-gold-500/10 border border-gold-500/30 text-gold-300 text-xs px-4 py-1.5 rounded-full font-bold">كۇرس ئالاھىدىلىكى</span>
+                <h2 class="text-3xl sm:text-4xl font-black text-white">نېمە ئۈچۈن «ئىنتىل» كۇرسىنى تاللايسىز؟</h2>
+                <p class="text-emerald-200 text-sm sm:text-base">بىز پەرزەنتىڭىزگە بىلىم بېرىپلا قالمىستىن، ئۇلارنىڭ ئىسلامىي ئخلاق-ئادابلىرى ۋە تەپەككۇر قىلىش ئىقتىدارىنى بىرگە ئۆستۈرىمىز.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                
+                <!-- Card 1 -->
+                <div class="glass-card-interactive rounded-3xl p-7 relative overflow-hidden group">
+                    <div class="w-14 h-14 rounded-2xl bg-gold-500/10 border border-gold-500/30 text-gold-400 flex items-center justify-center text-2xl font-bold mb-6 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-language"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2">ئەرەب تىلى ئىقتىدارى</h3>
+                    <p class="text-emerald-200 text-xs sm:text-sm leading-relaxed">
+                        ئاتاقلىق <strong>«العربية بين يديك»</strong> دەرسلىكى ئاساسىدا راۋان سۆزلەش، توغرا ئوقۇش ۋە ياخشى يېزىش ئىقتىدارى كۈچەيتىلىدۇ.
+                    </p>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="glass-card-interactive rounded-3xl p-7 relative overflow-hidden group">
+                    <div class="w-14 h-14 rounded-2xl bg-gold-500/10 border border-gold-500/30 text-gold-400 flex items-center justify-center text-2xl font-bold mb-6 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-calculator"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2">ماتېماتىكا & مەنتىق</h3>
+                    <p class="text-emerald-200 text-xs sm:text-sm leading-relaxed">
+                        ئاساسىي ھېسابلاش، مەسىلە يېشىش ۋە مەنتىقىي تەپەككۇر قىلىش ئىقتىدارىنى ئاددىي ھەم قىزىقارلىق ئۇسۇلدا مۇستەھكەملەش.
+                    </p>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="glass-card-interactive rounded-3xl p-7 relative overflow-hidden group">
+                    <div class="w-14 h-14 rounded-2xl bg-gold-500/10 border border-gold-500/30 text-gold-400 flex items-center justify-center text-2xl font-bold mb-6 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-hands-praying"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2">ئىسلامىي ئەخلاق-ئاداب</h3>
+                    <p class="text-emerald-200 text-xs sm:text-sm leading-relaxed">
+                        كۈندىلىك ئەزكارلار، ئاتا-ئانىغا ئىززەت-ھۆرمەت قىلىش، كىچىكلەرگە كۆيۈنۈش قاتارلىق گۈزەل ئىسلامىي خۇلقلار سىڭدۈرۈلىدۇ.
+                    </p>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="glass-card-interactive rounded-3xl p-7 relative overflow-hidden group">
+                    <div class="w-14 h-14 rounded-2xl bg-gold-500/10 border border-gold-500/30 text-gold-400 flex items-center justify-center text-2xl font-bold mb-6 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-user-tie"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2">تەجرىبىلىك ئوقۇتقۇچىلار</h3>
+                    <p class="text-emerald-200 text-xs sm:text-sm leading-relaxed">
+                        ئوغۇل بالىلارنىڭ ياش ئالاھىدىلىكىگە ماس كېلىدىغان ئالاھىدە چۈشىنەرلىك ئۆگىتىش ئۇسۇلى ۋە ئىنچىكە يېتەكچىلىك.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Course Fee Calculator Section -->
+    <section id="calculator" class="py-16 relative">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="glass-card rounded-3xl p-8 sm:p-10 border border-gold-500/40 shadow-2xl relative overflow-hidden">
+                <div class="text-center max-w-xl mx-auto mb-8">
+                    <span class="bg-gold-500/10 border border-gold-500/30 text-gold-300 text-xs px-3 py-1 rounded-full font-bold">ئۆزئارا تەسىرلىشىش</span>
+                    <h3 class="text-2xl sm:text-3xl font-black text-white mt-2">كۇرس باھا ھېسابلىغۇچى</h3>
+                    <p class="text-emerald-200 text-xs sm:text-sm mt-1">ئاي سانىنى تاللاپ جەمئىي كۇرس ھەققىنى ھېسابلاپ كۆرۈڭ.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                    <!-- Controls -->
+                    <div class="space-y-6">
+                        <div>
+                            <label class="block text-sm font-bold text-emerald-200 mb-2">ئوقۇغۇچى سانى:</label>
+                            <div class="flex items-center gap-3">
+                                <button onclick="updateCalcStudents(-1)" class="w-10 h-10 rounded-xl bg-emerald-900 border border-gold-500/30 text-gold-400 font-bold text-xl hover:bg-emerald-800 transition-colors">-</button>
+                                <span id="calcStudentCount" class="text-2xl font-bold text-white px-4">1</span>
+                                <button onclick="updateCalcStudents(1)" class="w-10 h-10 rounded-xl bg-emerald-900 border border-gold-500/30 text-gold-400 font-bold text-xl hover:bg-emerald-800 transition-colors">+</button>
+                                <span class="text-xs text-emerald-400 mr-2">(10 ياشتىن يۇقىرى)</span>
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="block text-sm font-bold text-emerald-200 mb-2">دۇام قىلىش مۇددىتى (ئاي):</label>
+                            <input type="range" id="monthsRange" min="1" max="6" value="1" oninput="calculateFee()" class="w-full accent-gold-500 bg-emerald-900 rounded-lg cursor-pointer">
+                            <div class="flex justify-between text-xs text-emerald-300 mt-1">
+                                <span>1 ئاي</span>
+                                <span>3 ئاي</span>
+                                <span>6 ئاي</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Output Display -->
+                    <div class="bg-emerald-950/90 rounded-2xl p-6 border border-gold-500/30 text-center space-y-3">
+                        <span class="text-xs text-emerald-300 block">مۇددەت: <span id="displayMonths" class="text-gold-300 font-bold">1</span> ئاي | <span id="displayStudents" class="text-gold-300 font-bold">1</span> ئوقۇغۇچى</span>
+                        <div class="text-4xl sm:text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-gold-300 to-amber-400 gold-glow-text">
+                            $<span id="totalFeeAmount">10</span>
+                        </div>
+                        <p class="text-[11px] text-emerald-400">كۇرس ھەققى ئايغا ئادەتتىكىچە 10$ USD ھېسابلىنىدۇ.</p>
+                        <a href="#register" class="inline-block bg-gold-500 text-emerald-950 font-bold text-xs px-6 py-2.5 rounded-xl hover:bg-gold-400 transition-colors">تېز تىزىملىتىش</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Time and Location Details Section -->
+    <section id="schedule" class="py-20 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                
+                <!-- Info text -->
+                <div class="lg:col-span-5 space-y-6">
+                    <span class="bg-gold-500/10 border border-gold-500/30 text-gold-300 text-xs px-4 py-1.5 rounded-full font-bold">تەپسىلىي ئۇچۇر</span>
+                    <h2 class="text-3xl sm:text-4xl font-black text-white leading-tight">دەرس ۋاقتى ۋە ئورنى تەپسىلىتى</h2>
+                    <p class="text-emerald-200 text-sm sm:text-base leading-relaxed">
+                        دەرستە ياخشى جەم بولۇش ۋە پۇختا ئۆگىنىش ئۈچۈن ھەر ھەپتىدە 2 كۈن مەخسۇس ئورۇنلاشتۇرۇلدى.
+                    </p>
+
+                    <div class="space-y-4">
+                        <div class="glass-card p-4 rounded-2xl border border-gold-500/30 flex items-center gap-4">
+                            <div class="w-12 h-12 rounded-xl bg-gold-500/20 text-gold-400 flex items-center justify-center text-xl font-bold flex-shrink-0">
+                                <i class="fa-solid fa-calendar-check"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-white text-base">ھەپتىلىك ۋاقتى</h4>
+                                <p class="text-xs text-emerald-200 mt-0.5">جۈمە كۈنى (چۈشتىن بۇرۇن) / شەنبە كۈنى (چۈشتىن كېيىن)</p>
+                            </div>
+                        </div>
+
+                        <div class="glass-card p-4 rounded-2xl border border-gold-500/30 flex items-center gap-4">
+                            <div class="w-12 h-12 rounded-xl bg-gold-500/20 text-gold-400 flex items-center justify-center text-xl font-bold flex-shrink-0">
+                                <i class="fa-solid fa-map-location-dot"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-white text-base">دەرس ئورنى</h4>
+                                <p class="text-xs text-emerald-200 mt-0.5">كونا كەفەرجالس مەھەللىسى 195-نۇمۇر</p>
+                            </div>
+                        </div>
+
+                        <div class="glass-card p-4 rounded-2xl border border-gold-500/30 flex items-center gap-4">
+                            <div class="w-12 h-12 rounded-xl bg-gold-500/20 text-gold-400 flex items-center justify-center text-xl font-bold flex-shrink-0">
+                                <i class="fa-solid fa-shield-halved"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-white text-base">ياش چېكى & جىنسى</h4>
+                                <p class="text-xs text-emerald-200 mt-0.5">10 ياشتىن يۇقىرى ئوغۇل بالىلارغا خاس</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Visual Interactive Card -->
+                <div class="lg:col-span-7">
+                    <div class="glass-card rounded-3xl p-8 border border-gold-500/40 relative overflow-hidden bg-gradient-to-br from-emerald-900/80 to-emerald-950">
+                        <div class="flex items-center justify-between border-b border-gold-500/20 pb-4 mb-6">
+                            <h3 class="text-xl font-bold text-gold-300">«ئىنتىل» دەرس جەدۋىلى ئىپادىسى</h3>
+                            <span class="text-xs text-emerald-400">ئايغا 10$ USD</span>
+                        </div>
+
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <!-- Friday Card -->
+                            <div class="bg-emerald-950/90 p-5 rounded-2xl border border-emerald-800 space-y-2">
+                                <div class="flex items-center justify-between text-gold-400 font-bold">
+                                    <span>جۈمە كۈنى</span>
+                                    <span class="text-xs bg-gold-500/20 px-2 py-0.5 rounded text-gold-300">چۈشتىن بۇرۇن</span>
+                                </div>
+                                <ul class="text-xs text-emerald-200 space-y-1.5 pt-2">
+                                    <li>• ئەرەب تىلى (العربية بين يديك)</li>
+                                    <li>• تەلەپپۇز ۋە ئوقۇش مەشىقى</li>
+                                    <li>• ئىسلامىي ئادابلار</li>
+                                </ul>
+                            </div>
+
+                            <!-- Saturday Card -->
+                            <div class="bg-emerald-950/90 p-5 rounded-2xl border border-emerald-800 space-y-2">
+                                <div class="flex items-center justify-between text-gold-400 font-bold">
+                                    <span>شەنبە كۈنى</span>
+                                    <span class="text-xs bg-gold-500/20 px-2 py-0.5 rounded text-gold-300">چۈشتىن كېيىن</span>
+                                </div>
+                                <ul class="text-xs text-emerald-200 space-y-1.5 pt-2">
+                                    <li>• ماتېماتىكا ئاساسلىرى</li>
+                                    <li>• مەنتىقىي تەپەككۇر مەشىقلىرى</li>
+                                    <li>• ھېسابلاش ئىقتىدارىنى كۈچەيتىش</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- Location Callout -->
+                        <div class="mt-6 p-4 rounded-2xl bg-gold-500/10 border border-gold-500/30 text-center">
+                            <p class="text-xs text-gold-300 font-semibold">📍 مانزىل: كونا كەفەرجالس مەھەللىسى 195-نۇمۇر</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Registration Form Section -->
+    <section id="register" class="py-20 relative">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="glass-card rounded-3xl p-8 sm:p-12 border-2 border-gold-500/50 shadow-2xl relative overflow-hidden">
+                
+                <div class="text-center max-w-xl mx-auto mb-10 space-y-2">
+                    <span class="bg-gold-500/20 text-gold-300 border border-gold-500/40 text-xs px-3.5 py-1 rounded-full font-bold">تېز تىزىملىتىش</span>
+                    <h2 class="text-3xl font-black text-white">«ئىنتىل» كۇرسىغا تىزىملىتىش</h2>
+                    <p class="text-emerald-200 text-xs sm:text-sm">تۆۋەندىكى ئۇچۇرلارنى توشۇرسىڭىز بىۋاسىتە تېلېگرام ئورگان كانىلىمىزغا ئەۋەتىلىدۇ.</p>
+                </div>
+
+                <form id="registrationForm" onsubmit="handleFormSubmit(event)" class="space-y-6">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                        <!-- Student Name -->
+                        <div>
+                            <label class="block text-xs font-bold text-gold-300 mb-2">ئوقۇغۇچىنىڭ ئىسمى-فامىلىسى <span class="text-red-400">*</span></label>
+                            <input type="text" id="studentName" required placeholder="مەسىلەن: ئەھمەد ئابدۇللاھ" class="w-full px-4 py-3.5 rounded-xl bg-emerald-950/90 border border-emerald-700/80 text-white focus:ring-2 focus:ring-gold-500 focus:border-transparent outline-none transition-all text-right text-sm">
+                        </div>
+
+                        <!-- Student Age -->
+                        <div>
+                            <label class="block text-xs font-bold text-gold-300 mb-2">ئوقۇغۇچىنىڭ يېشى <span class="text-red-400">*</span></label>
+                            <input type="number" id="studentAge" min="10" max="25" required placeholder="10 ياشتىن يۇقىرى" class="w-full px-4 py-3.5 rounded-xl bg-emerald-950/90 border border-emerald-700/80 text-white focus:ring-2 focus:ring-gold-500 focus:border-transparent outline-none transition-all text-right text-sm">
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                        <!-- Parent Phone -->
+                        <div>
+                            <label class="block text-xs font-bold text-gold-300 mb-2">ئاتا-ئانىسىنىڭ تېلېفون نومۇرى <span class="text-red-400">*</span></label>
+                            <input type="tel" id="parentPhone" required placeholder="+963 ..." class="w-full px-4 py-3.5 rounded-xl bg-emerald-950/90 border border-emerald-700/80 text-white focus:ring-2 focus:ring-gold-500 focus:border-transparent outline-none transition-all text-right text-sm">
+                        </div>
+
+                        <!-- Telegram Username -->
+                        <div>
+                            <label class="block text-xs font-bold text-gold-300 mb-2">تېلېگرام ئادرېسى</label>
+                            <input type="text" id="telegramUser" placeholder="@Username" class="w-full px-4 py-3.5 rounded-xl bg-emerald-950/90 border border-emerald-700/80 text-white focus:ring-2 focus:ring-gold-500 focus:border-transparent outline-none transition-all text-right text-sm">
+                        </div>
+                    </div>
+
+                    <!-- Notes -->
+                    <div>
+                        <label class="block text-xs font-bold text-gold-300 mb-2">قوشۇمچە ئىزاھات</label>
+                        <textarea id="notes" rows="3" placeholder="مەسىلەن: ئەرەب تىلى ئاساسى بار..." class="w-full px-4 py-3.5 rounded-xl bg-emerald-950/90 border border-emerald-700/80 text-white focus:ring-2 focus:ring-gold-500 focus:border-transparent outline-none transition-all text-right text-sm"></textarea>
+                    </div>
+
+                    <!-- Submit Button -->
+                    <div class="text-center pt-2">
+                        <button type="submit" class="w-full sm:w-auto bg-gradient-to-r from-gold-500 via-gold-400 to-amber-500 hover:from-gold-400 hover:to-gold-600 text-emerald-950 font-black px-10 py-4 rounded-xl shadow-xl transition-all duration-300 text-lg inline-flex items-center justify-center gap-3">
+                            <i class="fa-brands fa-telegram text-2xl text-emerald-950"></i>
+                            <span>تېلېگرام ئارقىلىق تىزىملىتىشنى ئەۋەتىش</span>
+                        </button>
+                    </div>
+                </form>
+
+                <!-- Direct Telegram Banner -->
+                <div class="mt-8 text-center pt-6 border-t border-emerald-800">
+                    <p class="text-xs text-emerald-300">
+                        بىۋاسىتە ئالاقىلاشماقچى بولسىڭىز: 
+                        <a href="https://t.me/Intilkursi" target="_blank" class="font-bold text-gold-400 underline hover:text-gold-300 ml-1">@Intilkursi</a>
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="py-16 relative">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-xl mx-auto mb-10">
+                <span class="bg-gold-500/10 border border-gold-500/30 text-gold-300 text-xs px-3 py-1 rounded-full font-bold">سۆئاللار</span>
+                <h2 class="text-3xl font-black text-white mt-2">كۆپ سورىلىدىغان سۆئاللار</h2>
+            </div>
+
+            <div class="space-y-4">
+                
+                <!-- FAQ 1 -->
+                <div class="glass-card rounded-2xl border border-gold-500/30 overflow-hidden">
+                    <button onclick="toggleFaq(1)" class="w-full p-5 text-right flex items-center justify-between font-bold text-white hover:text-gold-300 transition-colors">
+                        <span>كۇرس قاچان باشلىنىدۇ؟</span>
+                        <i id="faq-icon-1" class="fa-solid fa-chevron-down text-gold-400 transition-transform duration-300"></i>
+                    </button>
+                    <div id="faq-answer-1" class="faq-answer px-5 pb-5 text-emerald-200 text-xs sm:text-sm leading-relaxed">
+                        ئوقۇغۇچى سانى توشقاندىن كېيىن دەرھال دەرس باشلىنىدۇ. ئورۇن سانى چەكلىك بولغانلىقتىن بالدۇرراق تىزىملىتىشىڭىزنى تەۋسىيە قىلىمىز.
+                    </div>
+                </div>
+
+                <!-- FAQ 2 -->
+                <div class="glass-card rounded-2xl border border-gold-500/30 overflow-hidden">
+                    <button onclick="toggleFaq(2)" class="w-full p-5 text-right flex items-center justify-between font-bold text-white hover:text-gold-300 transition-colors">
+                        <span>10 ياشتىن تۆۋەن بالىلار قوبۇل قىلىنىمدۇ؟</span>
+                        <i id="faq-icon-2" class="fa-solid fa-chevron-down text-gold-400 transition-transform duration-300"></i>
+                    </button>
+                    <div id="faq-answer-2" class="faq-answer px-5 pb-5 text-emerald-200 text-xs sm:text-sm leading-relaxed">
+                        ھازىرچە كۇرسىمىز پەقەت 10 ياشتىن يۇقىرى ئوغۇل بالىلار ئۈچۈن تەقسىم قىلىنغان.
+                    </div>
+                </div>
+
+                <!-- FAQ 3 -->
+                <div class="glass-card rounded-2xl border border-gold-500/30 overflow-hidden">
+                    <button onclick="toggleFaq(3)" class="w-full p-5 text-right flex items-center justify-between font-bold text-white hover:text-gold-300 transition-colors">
+                        <span>كۇرس ھەققى قانچىلىك؟</span>
+                        <i id="faq-icon-3" class="fa-solid fa-chevron-down text-gold-400 transition-transform duration-300"></i>
+                    </button>
+                    <div id="faq-answer-3" class="faq-answer px-5 pb-5 text-emerald-200 text-xs sm:text-sm leading-relaxed">
+                        كۇرس ھەققى بىر ئايغا 10$ USD ھېسابلىنىدۇ.
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Quran Ayah Quote Section -->
+    <section class="py-12 bg-emerald-950/90 text-center border-t border-b border-gold-500/30">
+        <div class="max-w-4xl mx-auto px-4 space-y-3">
+            <span class="text-gold-400 text-2xl font-arabic block">«رَّبِّ زِدْنِي عِلْمًا»</span>
+            <p class="text-xs sm:text-sm text-emerald-200">«ئى پەرۋەردىگارىم! ئىلمىمنى ئاشۇرغىن.» (سورة طه: 114)</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-emerald-950 text-emerald-300 py-10 border-t border-emerald-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-4">
+            <div class="flex items-center justify-center gap-2">
+                <i class="fa-solid fa-book-quran text-gold-400 text-xl"></i>
+                <span class="text-lg font-bold text-gold-300">«ئىنتىل» كۇرسى</span>
+            </div>
+            <p class="text-xs text-emerald-400">ئادرېس: كونا كەفەرجالس مەھەللىسى 195-نۇمۇر | Telegram: @Intilkursi</p>
+            <p class="text-[11px] text-emerald-500">© 2026 «ئىنتىل» كۇرسى. بارلىق ھوقۇق قوغدىلىدۇ.</p>
+        </div>
+    </footer>
+
+    <!-- Interactive JavaScript Logic -->
+    <script>
+        // FAQ Accordion
+        function toggleFaq(id) {
+            const answer = document.getElementById(`faq-answer-${id}`);
+            const icon = document.getElementById(`faq-icon-${id}`);
+            const isOpen = answer.classList.contains('open');
+
+            document.querySelectorAll('.faq-answer').forEach(el => el.classList.remove('open'));
+            document.querySelectorAll('[id^="faq-icon-"]').forEach(el => el.classList.remove('rotate-180'));
+
+            if (!isOpen) {
+                answer.classList.add('open');
+                icon.classList.add('rotate-180');
+            }
+        }
+
+        // Fee Calculator Logic
+        let currentCalcStudents = 1;
+
+        function updateCalcStudents(change) {
+            currentCalcStudents = Math.max(1, Math.min(5, currentCalcStudents + change));
+            document.getElementById('calcStudentCount').innerText = currentCalcStudents;
+            calculateFee();
+        }
+
+        function calculateFee() {
+            const months = parseInt(document.getElementById('monthsRange').value);
+            const total = currentCalcStudents * months * 10;
+
+            document.getElementById('displayMonths').innerText = months;
+            document.getElementById('displayStudents').innerText = currentCalcStudents;
+            document.getElementById('totalFeeAmount').innerText = total;
+        }
+
+        // Form Submit to Telegram
+        function handleFormSubmit(event) {
+            event.preventDefault();
+
+            const name = document.getElementById('studentName').value;
+            const age = document.getElementById('studentAge').value;
+            const phone = document.getElementById('parentPhone').value;
+            const telegram = document.getElementById('telegramUser').value || 'كۆرسىتىلمىگەن';
+            const notes = document.getElementById('notes').value || 'ھېچقانداق';
+
+            const message = `سلام ئالەيكۇم، «ئىنتىل» كۇرسىغا يېڭى تىزىملىتىش ئىلتىماسى:\n\n` +
+                            `👤 ئوقۇغۇچى: ${name}\n` +
+                            `🎂 يېشى: ${age}\n` +
+                            `📞 تېلېفون: ${phone}\n` +
+                            `💬 تېلېگرام: ${telegram}\n` +
+                            `📝 ئىزاھات: ${notes}`;
+
+            const encodedMessage = encodeURIComponent(message);
+            window.open(`https://t.me/Intilkursi?text=${encodedMessage}`, '_blank');
+        }
+    </script>
+</body>
+</html>
